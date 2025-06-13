@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Home
+layout: default
 ---
 
 # Welcome to My Site!
