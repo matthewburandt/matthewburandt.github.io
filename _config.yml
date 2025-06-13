@@ -1,3 +1,5 @@
-theme: dirtyf/hitchens
 title: My Website
-description: A clean and minimalist site using the Hitches theme
+description: A minimalist site using Hitchens
+remote_theme: patdryburgh/hitchens@gh-pages
+plugins:
+  - jekyll-remote-theme
