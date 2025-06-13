@@ -1,5 +1,5 @@
 title: My Website
 description: A minimalist site using Hitchens
-remote_theme: patdryburgh/hitchens@gh-pages
+remote_theme: patdryburgh/hitchens
 plugins:
   - jekyll-remote-theme
