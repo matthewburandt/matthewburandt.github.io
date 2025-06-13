@@ -1,55 +1,16 @@
 ---
 layout: default
+title: Matthew Burandt
 ---
 
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>{{"Matthew Burandt"}}{% if page.title and page.title != "" %} &mdash; {{ page.title }}{% endif %}</title>
+<main id="main">
+  <h1>Welcome to my site</h1>
+  <p>This is my summer project: a personal website to showcase ideas, photos, and writing.</p>
 
-    {% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}  
-
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}">
-
-    <link rel="apple-touch-icon" href="{{ site.icon }}">
-
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-      {%- include google-analytics.html -%}
-    {%- endif -%}
-
-  </head>
-  <body>
-
-    {% if page.layout == 'home' %}
-      <a href="#main" class="skip-navigation">
-        Skip to list of posts
-      </a>
-    {% else %}
-      <a href="#main" class="skip-navigation">
-        Skip to content
-      </a>
-    {% endif %}
-
-    {{ content }}
-
-    {% unless site.hide_search %}
-      {% include search.html %}
-    {% endunless %}
-
-    {% include menu.html %}
-
-    {% unless site.hide_credits %}
-      <aside class="site-credits">
-        <p>
-          <small><a href="https://github.com/patdryburgh/hitchens">Hitchens Theme</a> powered by <a href="http://jekyllrb.com">Jekyll</a></small>
-        </p>
-      </aside>
-    {% endunless %}
-
-  </body>
-</html>
+  <h2>Current Projects</h2>
+  <ul>
+    <li>Printings</li>
+    <li>Projects</li>
+    <li>Other</li>
+  </ul>
+</main>
