@@ -17,22 +17,3 @@
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-
-.typing{
-  font-family: monospace;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #333;
-  width: 0;
-  animation: typing 2s steps(20, 0) forwards, blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 15ch } 
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #333 }
-}
