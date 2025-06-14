@@ -23,11 +23,66 @@
 }
 
 #typed-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  padding-left: 2rem;
   color: #222;
   padding-right: 6px;
   white-space: nowrap;
   animation: none;
   border-right: none;
+}
+
+/* ========================
+   Ticker‑tape header
+======================== */
+.ticker {
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+  /* optional spacing */
+  margin: 2rem 0 1.5rem;
+}
+
+.ticker__move {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.ticker__move span {
+  font-size: .9rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* keyframes for left‑to‑right scroll */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0);    }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========================
+   Flickity carousel tweaks
+======================== */
+.print-carousel {
+  margin: 1.5rem 0;
+}
+
+.print-carousel .carousel-cell {
+  width: 70%;                /* shows 1‑ish slide at a time */
+  max-width: 400px;          /* optional cap */
+  margin-right: 10px;
+}
+
+.print-carousel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 
