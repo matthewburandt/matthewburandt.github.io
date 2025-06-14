@@ -13,15 +13,31 @@ title: Matthew Burandt
   <div class="page-padding">
     <p>This is my summer project: a personal website to showcase ideas, photos, and writing.</p>
 
-    <h2>Current Projects</h2>
+    <div class="ticker">
+  <div class="ticker__move">
+    <span>Current Projects&nbsp;•&nbsp;</span>
+    <span>Current Projects&nbsp;•&nbsp;</span>
+    <span>Current Projects&nbsp;•&nbsp;</span>
+    <span>Current Projects&nbsp;•&nbsp;</span>
+  </div>
+</div>
     <ul>
       <li><a href="/gallery.html">Prints</a></li>
+      <!-- Carousel -->
+        <div class="print-carousel js-flickity"
+           data-flickity='{ "wrapAround": true, "autoPlay": 3000, "imagesLoaded": true }'>
+          <div class="carousel-cell"><img src="/assets/images/gardenparty_burandt.jpg" alt="Garden Party"></div>
+          <div class="carousel-cell"><img src="/assets/images/ravenprint_burandt.jpg" alt="Raven"></div>
+        </div>
       <li>Projects</li>
       <li>Other</li>
     </ul>
   </div>
 </main>
 
+<!-- Flickity CSS + JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 <!-- Typed.js library -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
