@@ -38,10 +38,9 @@
 .ticker {
   overflow: hidden;
   width: 100%;
-  border-top: 5px solid #eee;
-  border-bottom: 5px solid #eee;
-  background: none;
-  /* optional spacing */
+  /* border-top: 5px solid #000;     /* make borders black if you want */
+  /* border-bottom: 5px solid #000; */
+  background: transparent;        /* transparent background */
   margin: 2rem 0 1.5rem;
 }
 
@@ -49,19 +48,19 @@
   display: inline-block;
   white-space: nowrap;
   animation: ticker-scroll 20s linear infinite;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .ticker__move span {
-  font-size: 1.5rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);                /* larger font size */
   text-transform: uppercase;
-  color: #222;
+  color: #000;                    /* black font */
 }
 
 /* keyframes for left‑to‑right scroll */
 @keyframes ticker-scroll {
-  0%   { transform: translateX(0);    }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
