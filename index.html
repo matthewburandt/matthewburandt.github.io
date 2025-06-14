@@ -125,15 +125,40 @@ model2 = Sequential([
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <script>
-  // Typing headline
+  //Typing headline
   document.addEventListener("DOMContentLoaded", function () {
-    new Typed("#typed-title", {
-      strings: ["Welcome to My Site", "A Place for Projects", "And Prints"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true
-    });
+    const strings = [
+      { text: "Welcome to My Site", speed: 50 },
+      { text: "A Place for Projects", speed: 40 },
+      { text: "And Prints", speed: 30 },
+      { text: "And Art", speed: 20 },
+      { text: "And Fun", speed: 10 },
+      { text: "And Love", speed: 8 },
+      { text: "And Things", speed: 6 },
+      { text: "And Life", speed: 5 },
+      { text: "Et c.", speed: 3 }
+    ];
+
+    let index = 0;
+    let typed;
+
+    function startTyped() {
+      const current = strings[index];
+
+      typed = new Typed("#typed-title", {
+        strings: [current.text],
+        typeSpeed: current.speed,
+        backSpeed: 25,
+        backDelay: 1500,
+        showCursor: false,
+        onComplete: () => {
+          setTimeout(() => {
+            typed.destroy();
+            index = (index + 1) % strings.length;
+            startTyped();
+          }, 1000);
+        }
+      });
 
     // highlight.js
     hljs.highlightAll();
