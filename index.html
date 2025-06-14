@@ -3,112 +3,126 @@ layout: default
 title: Matthew Burandt
 ---
 
-<!-- Custom styles (make sure assets/css/custom.css exists) -->
 <link rel="stylesheet" href="/assets/css/custom.css">
 
-<!-- Page hero with typing effect -->
+<!-- Flickity & highlight.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css">
+
+<!-- Page hero -->
 <section class="site-header">
   <h1><span id="typed-title"></span></h1>
   <hr class="divider below-title">
 </section>
 
-<main id="main">
-  <div class="page-padding">
-  <section class="intro-section">
-    <div class="intro-text">
-      <p>This is my summer project: A website to showcase my prints and projects.</p>
-    </div>
-    <div class="intro-image">
-      <img src="/assets/images/art-technology.jpg" alt="Intro Image">
-    </div>
-  </section>
+<!-- Intro text + image -->
+<section class="intro-section page-padding">
+  <div class="intro-text">
+    <p>This is my summer project: A website to showcase my prints and projects.</p>
+  </div>
+  <div class="intro-image">
+    <img src="/assets/images/art-technology.jpg" alt="Intro image">
+  </div>
+</section>
 
 <hr class="divider above-ticker">
 
+<!-- Ticker -->
 <div class="ticker">
   <div class="ticker__move">
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;—&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;—&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;—&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;—&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;—&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
-    <span>Current Projects&nbsp;</span>
+    <span>Current Projects — </span><span>Current Projects — </span>
+    <span>Current Projects — </span><span>Current Projects — </span>
+    <span>Current Projects — </span><span>Current Projects — </span>
   </div>
 </div>
-    <ul>
-      <li><a href="/gallery.html">Prints</a></li>
-      <!-- Carousel -->
-        <div class="print-carousel js-flickity"
-           data-flickity='{ "wrapAround": true, "autoPlay": false, "imagesLoaded": true, "pageDots": false, "cellAlign": "left" }'>
-          <div class="carousel-cell"><img src="/assets/images/gardenparty_burandt.jpg" alt="Garden Party"></div>
-          <div class="carousel-cell"><img src="/assets/images/ravenprint_burandt.jpg" alt="Raven"></div>
+
+<!-- Project blocks -->
+<main id="main">
+  <div class="page-padding">
+
+    <!-- PRINTS -->
+    <section class="project-block">
+      <h2><a href="/gallery.html">Prints</a></h2>
+
+      <div class="print-carousel js-flickity"
+           data-flickity='{
+             "wrapAround": true,
+             "autoPlay": false,
+             "imagesLoaded": true,
+             "pageDots": false,
+             "cellAlign": "left"
+           }'>
+        <div class="carousel-cell">
+          <img src="/assets/images/gardenparty_burandt.jpg" alt="Garden Party">
         </div>
-      <li>Projects</li>
-        <div class="code-snippet-carousel carousel">
-          <div class="carousel-cell">
-            <pre><code class="language-python">
-            # Decision Tree Regressor
-              param_dist = {
-                  'max_depth': randint(low=1, high=20),
-                  'max_features': randint(low=1, high=10),
-                  'min_samples_leaf': randint(low=1, high=15)
-              }
-              
-              tr2 = DecisionTreeRegressor(random_state=42,)
-              tr_search = RandomizedSearchCV(tr2,
-                                             param_distributions=param_dist,
-                                             n_iter=100,
-                                             cv=10,
-                                             scoring='neg_mean_squared_error',
-                                             random_state=42)
-              
-              tr_search.fit(X_train_prepared, y_train)
-            </code></pre>
-          <p class="carousel-caption">MPLS Traffic Prediction with a Decision Tree Regressor (Python)</p>
+        <div class="carousel-cell">
+          <img src="/assets/images/ravenprint_burandt.jpg" alt="Raven">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project-block">
+      <h2>Projects</h2>
+
+      <div class="code-snippet-carousel carousel">
+        <div class="carousel-cell">
+          <pre><code class="language-python">
+# Decision Tree Regressor
+param_dist = {
+    'max_depth': randint(low=1, high=20),
+    'max_features': randint(low=1, high=10),
+    'min_samples_leaf': randint(low=1, high=15)
+}
+
+tr2 = DecisionTreeRegressor(random_state=42)
+tr_search = RandomizedSearchCV(
+    tr2,
+    param_distributions=param_dist,
+    n_iter=100,
+    cv=10,
+    scoring='neg_mean_squared_error',
+    random_state=42
+)
+tr_search.fit(X_train_prepared, y_train)
+          </code></pre>
+          <p class="carousel-caption">MPLS Traffic Prediction (Python)</p>
         </div>
 
         <div class="carousel-cell">
           <pre><code class="language-python">
-            model2 = Sequential([
-            keras.layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)),
-            keras.layers.MaxPooling2D(pool_size=(2, 2)), # Pooling layer
-            keras.layers.Conv2D(64, kernel_size=(3, 3), activation='relu'),# Convolutional layer
-            keras.layers.Flatten(), # Flatten layer
-            keras.layers.Dense(256, activation='relu'), # Dense layer
-            keras.layers.Dense(128, activation='relu'), # Dense layer
-            keras.layers.Dense(num_labels, activation='softmax') # Output layer
-            ])
+model2 = Sequential([
+    keras.layers.Conv2D(32, (3,3), activation='relu',
+                        input_shape=(28,28,1)),
+    keras.layers.MaxPooling2D((2,2)),
+    keras.layers.Conv2D(64, (3,3), activation='relu'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(256, activation='relu'),
+    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dense(num_labels, activation='softmax')
+])
           </code></pre>
-          <p class="carousel-caption">Digit Classifier (Python - Keras)</p>
+          <p class="carousel-caption">Digit Classifier (Keras)</p>
         </div>
       </div>
-      <li>Other</li>
-    </ul>
+    </section>
+
+    <!-- OTHER -->
+    <section class="project-block">
+      <h2>Other</h2>
+      <p>More coming soon…</p>
+    </section>
+
   </div>
 </main>
 
-<!-- highlight.js CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css">
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-
-<!-- Flickity CSS + JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
-<!-- Typed.js library -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 <script>
+  // Typing headline
   document.addEventListener("DOMContentLoaded", function () {
     new Typed("#typed-title", {
       strings: ["Welcome to My Site", "A Place for Projects", "And Prints"],
@@ -116,6 +130,18 @@ title: Matthew Burandt
       backSpeed: 30,
       backDelay: 2000,
       loop: true
+    });
+
+    // highlight.js
+    hljs.highlightAll();
+
+    // Flickity for code snippets
+    new Flickity('.code-snippet-carousel', {
+      cellAlign: 'left',
+      contain: true,
+      wrapAround: true,
+      autoPlay: false,
+      pageDots: false
     });
   });
 </script>
