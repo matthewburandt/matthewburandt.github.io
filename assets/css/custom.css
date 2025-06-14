@@ -42,9 +42,15 @@
 
 /* Divider styles */
 .divider {
+  height: 0;                 /* remove default <hr> height */
   border: none;
-  border-top: 2px solid #000;
-  margin: 1.5rem 0;
+  border-top: 2px solid #000;/* single line only */
+  margin: 1.75rem 0;         /* tweak spacing */
+}
+
+/* ensure first divider sits directly under the title */
+.site-header .divider {
+  margin-top: 1rem;          /* pull closer to the title */
 }
 
 .intro-section {
@@ -58,21 +64,25 @@
 
 .intro-text {
   flex: 1;
-  font-size: 1.1rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem); /* scales with viewport   */
+  line-height: 1.45;                        /* nicer paragraph rhythm */
+  font-weight: 500;
 }
 
 .intro-image {
   flex: 1;
-  display: flex;
-  justify-content: flex-end;
+  /* pull image edge to the very right, cancelling .page-padding */
+  margin-right: -2rem;   /* = negative of page‑padding */
 }
 
 .intro-image img {
-  height: auto;  /* You can make this dynamic with min/max if needed */
   width: 100%;
   height: auto;
-  object-fit: cover;
-  border-radius: 2px;
+  max-width: 100%;       /* never exceed its column */
+  max-height: 70vh;      /* keeps full image visible without scrolling */
+  object-fit: cover;     /* fill space, crop if necessary */
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
 }
 
 /* ========================
