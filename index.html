@@ -5,15 +5,17 @@ title: Matthew Burandt
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
-<!-- Flickity & highlight.js CSS -->
+<!-- External CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css">
 
-<hr class="divider below-title">
 <!-- Page hero -->
 <section class="site-header">
   <h1><span id="typed-title"></span></h1>
 </section>
+
+<!-- Divider UNDER the title -->
+<hr class="divider full‑bleed">
 
 <!-- Intro text + image -->
 <section class="intro-section page-padding">
@@ -25,13 +27,12 @@ title: Matthew Burandt
   </div>
 </section>
 
-<hr class="divider above-ticker">
+<!-- Divider ABOVE ticker, flush with image bottom -->
+<hr class="divider full‑bleed">
 
 <!-- Ticker -->
 <div class="ticker">
   <div class="ticker__move">
-    <span>Current Projects — </span><span>Current Projects — </span>
-    <span>Current Projects — </span><span>Current Projects — </span>
     <span>Current Projects — </span><span>Current Projects — </span>
     <span>Current Projects — </span><span>Current Projects — </span>
     <span>Current Projects — </span><span>Current Projects — </span>
@@ -70,12 +71,11 @@ title: Matthew Burandt
 
       <div class="code-snippet-carousel carousel">
         <div class="carousel-cell">
-          <pre><code class="language-python">
-# Decision Tree Regressor
+<pre><code class="language-python"># Decision Tree Regressor
 param_dist = {
-    'max_depth': randint(low=1, high=20),
-    'max_features': randint(low=1, high=10),
-    'min_samples_leaf': randint(low=1, high=15)
+    'max_depth': randint(1, 20),
+    'max_features': randint(1, 10),
+    'min_samples_leaf': randint(1, 15)
 }
 
 tr2 = DecisionTreeRegressor(random_state=42)
@@ -87,24 +87,20 @@ tr_search = RandomizedSearchCV(
     scoring='neg_mean_squared_error',
     random_state=42
 )
-tr_search.fit(X_train_prepared, y_train)
-          </code></pre>
+tr_search.fit(X_train_prepared, y_train)</code></pre>
           <p class="carousel-caption">MPLS Traffic Prediction (Python)</p>
         </div>
 
         <div class="carousel-cell">
-          <pre><code class="language-python">
-model2 = Sequential([
-    keras.layers.Conv2D(32, (3,3), activation='relu',
-                        input_shape=(28,28,1)),
+<pre><code class="language-python">model2 = Sequential([
+    keras.layers.Conv2D(32,(3,3),activation='relu',input_shape=(28,28,1)),
     keras.layers.MaxPooling2D((2,2)),
-    keras.layers.Conv2D(64, (3,3), activation='relu'),
+    keras.layers.Conv2D(64,(3,3),activation='relu'),
     keras.layers.Flatten(),
     keras.layers.Dense(256, activation='relu'),
     keras.layers.Dense(128, activation='relu'),
     keras.layers.Dense(num_labels, activation='softmax')
-])
-          </code></pre>
+])</code></pre>
           <p class="carousel-caption">Digit Classifier (Keras)</p>
         </div>
       </div>
@@ -119,61 +115,59 @@ model2 = Sequential([
   </div>
 </main>
 
-<!-- Scripts -->
+<!-- External JS -->
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <script>
-  //Typing headline
-    document.addEventListener("DOMContentLoaded", function () {
-    const strings = [
-      { text: "Welcome to My Site", speed: 50 },
-      { text: "A Place for Projects", speed: 40 },
-      { text: "And Prints", speed: 30 },
-      { text: "And Art", speed: 20 },
-      { text: "And Fun", speed: 10 },
-      { text: "And Love", speed: 8 },
-      { text: "And Things", speed: 6 },
-      { text: "And Life", speed: 5 },
-      { text: "Et c.", speed: 3 }
-    ];
+document.addEventListener("DOMContentLoaded", function () {
 
-    let index = 0;
-    let typed;
+  /* ── 1. Typing headline with variable speeds ── */
+  const strings = [
+    { text: "Welcome to My Site", speed: 50 },
+    { text: "A Place for Projects", speed: 40 },
+    { text: "And Prints", speed: 30 },
+    { text: "And Art", speed: 20 },
+    { text: "And Fun", speed: 10 },
+    { text: "And Love", speed: 8 },
+    { text: "And Things", speed: 6 },
+    { text: "And Life", speed: 5 },
+    { text: "Et c.", speed: 3 }
+  ];
 
-    function startTyped() {
-      const current = strings[index];
+  let index = 0, typed;
 
-      typed = new Typed("#typed-title", {
-        strings: [current.text],
-        typeSpeed: current.speed,
-        backSpeed: 20,
-        backDelay: 1000,
-        showCursor: false,
-        onComplete: () => {
-          setTimeout(() => {
-            typed.destroy();
-            index = (index + 1) % strings.length;
-            startTyped();
-          }, 800);
-        }
-      });
-    }
-
-    startTyped();
-  });
-
-    // highlight.js
-    hljs.highlightAll();
-
-    // Flickity for code snippets
-    new Flickity('.code-snippet-carousel', {
-      cellAlign: 'left',
-      contain: true,
-      wrapAround: true,
-      autoPlay: false,
-      pageDots: false
+  function startTyped() {
+    const { text, speed } = strings[index];
+    typed = new Typed("#typed-title", {
+      strings: [text],
+      typeSpeed: speed,
+      backSpeed: 20,
+      backDelay: 1000,
+      showCursor: false,
+      onComplete() {
+        setTimeout(() => {
+          typed.destroy();
+          index = (index + 1) % strings.length;
+          startTyped();
+        }, 800);
+      }
     });
+  }
+  startTyped();
+
+  /* ── 2. Syntax highlighting ── */
+  hljs.highlightAll();
+
+  /* ── 3. Flickity for code snippets ── */
+  new Flickity(".code-snippet-carousel", {
+    cellAlign: "left",
+    contain: true,
+    wrapAround: true,
+    autoPlay: false,
+    pageDots: false
   });
+
+});
 </script>
