@@ -19,11 +19,12 @@
 }
 
 .typing{
+  font-family: monospace;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid #333
+  border-right: 2px solid #333;
   width: 0;
-  animation: typing 2s stemps(20, 0) forwards, blink 0.75s step-end infinite;
+  animation: typing 2s steps(20, 0) forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
