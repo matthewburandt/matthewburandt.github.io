@@ -66,11 +66,11 @@
 }
 
 .intro-image img {
-  max-height: 300px;  /* You can make this dynamic with min/max if needed */
-  width: auto;
+  max-height: 500px;  /* You can make this dynamic with min/max if needed */
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  object-fit: cover;
+  border-radius: 2px;
 }
 
 /* ========================
