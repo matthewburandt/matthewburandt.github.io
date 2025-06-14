@@ -26,7 +26,8 @@
 .site-header {
   padding-top: 3rem;
   padding-bottom: 2rem;
-  text-align: center;
+  padding-left: 2rem;
+  text-align: left;
 }
 
 #typed-title {
@@ -48,10 +49,11 @@
 
 .intro-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 2rem;
-  padding: 1.5rem 0;
+  align-items: left;
+  justify-content: space-between;
+  margin: 4rem 0; /* vertical spacing between dividers */
+  flex-wrap: wrap; /* allow stacking on small screens */
 }
 
 .intro-text {
@@ -66,7 +68,7 @@
 }
 
 .intro-image img {
-  max-height: 500px;  /* You can make this dynamic with min/max if needed */
+  height: auto;  /* You can make this dynamic with min/max if needed */
   width: 100%;
   height: auto;
   object-fit: cover;
