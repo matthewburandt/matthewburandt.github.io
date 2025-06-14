@@ -31,7 +31,7 @@
   to { width: 15ch } 
 }
 
-@ keyframes blink {
+@keyframes blink {
   from, to { border-color: transparent }
   50% { border-color: #333 }
 }
