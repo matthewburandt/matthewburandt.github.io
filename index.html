@@ -2,18 +2,36 @@
 layout: default
 title: Matthew Burandt
 ---
+
+<!-- Custom styles (make sure assets/css/custom.css exists) -->
 <link rel="stylesheet" href="/assets/css/custom.css">
+
+<!-- Page hero with typing effect -->
+<h1><span id="typed-title"></span></h1>
 
 <main id="main">
   <div class="page-padding">
-  <h1 class="typing">Welcome to my site</h1>
-  <p>This is my summer project: a personal website to showcase ideas, photos, and writing.</p>
+    <p>This is my summer project: a personal website to showcase ideas, photos, and writing.</p>
 
-  <h2>Current Projects</h2>
-  <ul>
-    <li><a href="/gallery.html">Printings</a></li>
-    <li>Projects</li>
-    <li>Other</li>
-  </ul>
+    <h2>Current Projects</h2>
+    <ul>
+      <li><a href="/gallery.html">Printings</a></li>
+      <li>Projects</li>
+      <li>Other</li>
+    </ul>
   </div>
 </main>
+
+<!-- Typed.js library -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed("#typed-title", {
+      strings: ["Welcome to My Site", "A Place for Projects", "And Prints"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
+  });
+</script>
