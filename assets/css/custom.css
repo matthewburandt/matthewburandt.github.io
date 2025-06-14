@@ -22,6 +22,13 @@
   display: none;
 }
 
+/* Add space between title and ticker */
+.site-header {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
 #typed-title {
   font-size: clamp(2.8rem, 5vw, 4rem);
   padding-left: 2rem;
@@ -30,6 +37,40 @@
   white-space: nowrap;
   animation: none;
   border-right: none;
+}
+
+/* Divider styles */
+.divider {
+  border: none;
+  border-top: 2px solid #000;
+  margin: 1.5rem 0;
+}
+
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.intro-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.intro-image img {
+  max-height: 300px;  /* You can make this dynamic with min/max if needed */
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* ========================
