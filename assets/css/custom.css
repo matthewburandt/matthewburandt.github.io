@@ -1,103 +1,92 @@
+/*──────────────────────────────────────────────
+  Variables & helpers
+──────────────────────────────────────────────*/
+:root {
+  --space: 2rem;             /* master horizontal padding */
+}
+
+/* Utility: full‑bleed line that ignores padding */
+.full‑bleed {
+  width: calc(100% + (var(--space) * 2));
+  margin-inline: calc(-1 * var(--space));
+  height: 0;
+  border: none;
+  border-top: 2px solid #000;
+}
+
+/*──────────────────────────────────────────────
+  Global page padding
+──────────────────────────────────────────────*/
 .page-padding {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-inline: var(--space);
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1rem;
-  margin-top: 2rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-/* Styling for the typing hero */
-.typed-cursor {
-  display: none;
-}
-
-/* Add space between title and ticker */
+/*──────────────────────────────────────────────
+  Hero / typing title
+──────────────────────────────────────────────*/
 .site-header {
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
+  padding-block: 3rem 2rem;         /* space above + below */
   text-align: left;
 }
 
 #typed-title {
   font-size: clamp(2.8rem, 5vw, 4rem);
-  padding-left: 2rem;
-  color: #222;
-  padding-right: 6px;
-  white-space: nowrap;
-  animation: none;
-  border-right: none;
+  padding-left: var(--space);
 }
 
-/* Divider styles */
-.divider {
-  width: 100vw;              /* full viewport width */
-  margin-left: calc(-1 * var(--page-padding, 2rem));  /* cancel .page-padding */
-  margin-right: calc(-1 * var(--page-padding, 2rem));
-  border: none;
-  border-top: 2px solid #000;
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-
-/* ensure first divider sits directly under the title */
-.site-header .divider {
-  margin-top: 1rem;          /* pull closer to the title */
-}
-
+/*──────────────────────────────────────────────
+  Intro (subtitle left, image right)
+──────────────────────────────────────────────*/
 .intro-section {
   display: flex;
+  flex-wrap: wrap;                 /* stacks on small screens */
   gap: 2rem;
-  align-items: left;
-  justify-content: space-between;
-  margin: 4rem 0; /* vertical spacing between dividers */
-  flex-wrap: wrap; /* allow stacking on small screens */
+  align-items: center;             /* vertically centre text vs. image */
+  margin-block: 0;                 /* dividers handle vertical rhythm */
 }
 
 .intro-text {
   flex: 1;
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem); /* scales with viewport   */
-  line-height: 1.45;                        /* nicer paragraph rhythm */
+  text-align: right;               /* ► 1. right‑align subtitle text  */
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 1.45;
   font-weight: 500;
 }
 
 .intro-image {
   flex: 1;
-  /* pull image edge to the very right, cancelling .page-padding */
-  margin-right: -2rem;   /* = negative of page‑padding */
+  margin-right: calc(-1 * var(--space));   /* pull to right edge */
 }
 
 .intro-image img {
   width: 100%;
   height: auto;
-  max-width: 100%;       /* never exceed its column */
-  max-height: 100vh;      /* keeps full image visible without scrolling */
-  object-fit: cover;     /* fill space, crop if necessary */
+  max-height: 80vh;                /* ► 5. big but never causes scroll */
+  object-fit: cover;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-/* ========================
-   Ticker‑tape header
-======================== */
+/*──────────────────────────────────────────────
+  Divider placement (single, flush with image)
+──────────────────────────────────────────────*/
+/* Top divider sits *below* title, flush with image top */
+.site-header + .full‑bleed {        /* first line after header */
+  margin-block-start: 0.5rem;
+}
+
+/* Bottom divider sits *below* intro section, flush with image bottom */
+.intro-section + .full‑bleed {
+  margin-block-end: 0.5rem;
+}
+
+/*──────────────────────────────────────────────
+  Ticker
+──────────────────────────────────────────────*/
 .ticker {
   overflow: hidden;
   width: 100%;
-  /* border-top: 5px solid #000;     /* make borders black if you want */
-  /* border-bottom: 5px solid #000; */
-  background: transparent;        /* transparent background */
-  margin: 2rem 0 1.5rem;
+  margin-block: 2rem 1.5rem;
 }
 
 .ticker__move {
@@ -109,38 +98,53 @@
 }
 
 .ticker__move span {
-  font-size: clamp(1.8rem, 5vw, 3rem);                /* larger font size */
+  font-size: clamp(1.8rem, 5vw, 3rem);
   text-transform: uppercase;
-  color: #000;                    /* black font */
+  color: #000;
 }
 
-/* keyframes for left‑to‑right scroll */
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ========================
-   Flickity carousel tweaks
-======================== */
+/*──────────────────────────────────────────────
+  Gallery grid
+──────────────────────────────────────────────*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/*──────────────────────────────────────────────
+  Flickity carousels
+──────────────────────────────────────────────*/
 .print-carousel {
-  margin: 1.5rem 0;
+  margin-block: 1.5rem;
 }
 
 .print-carousel .carousel-cell {
-  width: 70%;                /* shows 1‑ish slide at a time */
-  max-width: 400px;          /* optional cap */
+  width: 70%;
+  max-width: 400px;
   margin-right: 10px;
 }
 
 .print-carousel img {
-  display: block;
   width: 100%;
-  height: auto;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+/* code snippet carousel */
 .code-snippet-carousel .carousel-cell {
   width: 90%;
   max-width: 600px;
@@ -156,7 +160,6 @@
 .code-snippet-carousel pre {
   margin: 0;
   font-size: 0.9rem;
-  white-space: pre;
   background: none;
 }
 
@@ -166,3 +169,8 @@
   text-align: center;
   color: #ccc;
 }
+
+/*──────────────────────────────────────────────
+  Misc small tweaks
+──────────────────────────────────────────────*/
+.typed-cursor { display: none; }   /* hide Typed.js default caret */
