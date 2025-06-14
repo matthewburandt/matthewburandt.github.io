@@ -42,10 +42,13 @@
 
 /* Divider styles */
 .divider {
-  height: 0;                 /* remove default <hr> height */
+  width: 100vw;              /* full viewport width */
+  margin-left: calc(-1 * var(--page-padding, 2rem));  /* cancel .page-padding */
+  margin-right: calc(-1 * var(--page-padding, 2rem));
   border: none;
-  border-top: 2px solid #000;/* single line only */
-  margin: 1.75rem 0;         /* tweak spacing */
+  border-top: 2px solid #000;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 /* ensure first divider sits directly under the title */
@@ -79,7 +82,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;       /* never exceed its column */
-  max-height: 70vh;      /* keeps full image visible without scrolling */
+  max-height: 100vh;      /* keeps full image visible without scrolling */
   object-fit: cover;     /* fill space, crop if necessary */
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(0,0,0,.12);
