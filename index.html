@@ -126,7 +126,7 @@ model2 = Sequential([
 
 <script>
   //Typing headline
-  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const strings = [
       { text: "Welcome to My Site", speed: 50 },
       { text: "A Place for Projects", speed: 40 },
@@ -148,17 +148,21 @@ model2 = Sequential([
       typed = new Typed("#typed-title", {
         strings: [current.text],
         typeSpeed: current.speed,
-        backSpeed: 25,
-        backDelay: 1500,
+        backSpeed: 20,
+        backDelay: 1000,
         showCursor: false,
         onComplete: () => {
           setTimeout(() => {
             typed.destroy();
             index = (index + 1) % strings.length;
             startTyped();
-          }, 1000);
+          }, 800);
         }
       });
+    }
+
+    startTyped();
+  });
 
     // highlight.js
     hljs.highlightAll();
