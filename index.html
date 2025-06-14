@@ -42,6 +42,44 @@ title: Matthew Burandt
           <div class="carousel-cell"><img src="/assets/images/ravenprint_burandt.jpg" alt="Raven"></div>
         </div>
       <li>Projects</li>
+        <div class="code-snippet-carousel carousel">
+          <div class="carousel-cell">
+            <pre><code class="language-python">
+            # Decision Tree Regressor
+              param_dist = {
+                  'max_depth': randint(low=1, high=20),
+                  'max_features': randint(low=1, high=10),
+                  'min_samples_leaf': randint(low=1, high=15)
+              }
+              
+              tr2 = DecisionTreeRegressor(random_state=42,)
+              tr_search = RandomizedSearchCV(tr2,
+                                             param_distributions=param_dist,
+                                             n_iter=100,
+                                             cv=10,
+                                             scoring='neg_mean_squared_error',
+                                             random_state=42)
+              
+              tr_search.fit(X_train_prepared, y_train)
+            </code></pre>
+          <p class="carousel-caption">MPLS Traffic Prediction with a Decision Tree Regressor (Python)</p>
+        </div>
+
+        <div class="carousel-cell">
+          <pre><code class="language-python">
+            model2 = Sequential([
+            keras.layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)),
+            keras.layers.MaxPooling2D(pool_size=(2, 2)), # Pooling layer
+            keras.layers.Conv2D(64, kernel_size=(3, 3), activation='relu'),# Convolutional layer
+            keras.layers.Flatten(), # Flatten layer
+            keras.layers.Dense(256, activation='relu'), # Dense layer
+            keras.layers.Dense(128, activation='relu'), # Dense layer
+            keras.layers.Dense(num_labels, activation='softmax') # Output layer
+            ])
+          </code></pre>
+          <p class="carousel-caption">Digit Classifier (Python - Keras)</p>
+        </div>
+      </div>
       <li>Other</li>
     </ul>
   </div>
