@@ -112,6 +112,12 @@ tr_search.fit(X_train_prepared, y_train)</code></pre>
       <p>More coming soon…</p>
     </section>
 
+    <!-- GLITCH TEXT SKETCH -->
+    <section class="project-block">
+      <h2>Glitch Experiment</h2>
+      <div id="p5-holder"></div>
+    </section>
+
   </div>
 </main>
 
@@ -119,11 +125,11 @@ tr_search.fit(X_train_prepared, y_train)</code></pre>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ffd8/p5.glitch/lib/p5.glitch.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-  /* ── 1. Typing headline with variable speeds ── */
   const strings = [
     { text: "Welcome to My Site", speed: 50 }, { text: "A Place for Projects", speed: 40 },
     { text: "And Prints", speed: 30 }, { text: "And Art", speed: 20 },
@@ -156,10 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   startTyped();
 
-  /* ── 2. Syntax highlighting ── */
   hljs.highlightAll();
 
-  /* ── 3. Flickity for code snippets ── */
   new Flickity(".code-snippet-carousel", {
     cellAlign: "left",
     contain: true,
@@ -167,6 +171,42 @@ document.addEventListener("DOMContentLoaded", function () {
     autoPlay: false,
     pageDots: false
   });
-
 });
 </script>
+
+<script>
+let glitch, font;
+function preload() {
+  font = loadFont("https://assets.codepen.io/191583/PPEditorialNew-Regular.otf");
+}
+function setup() {
+  let canvas = createCanvas(windowWidth, 250);
+  canvas.parent("p5-holder");
+  glitch = new Glitch();
+  textFont(font);
+  textSize(64);
+  textAlign(CENTER, CENTER);
+  fill("#fff");
+  noStroke();
+}
+function draw() {
+  background("#0c0c0c");
+  glitch.loadImage(canvas);
+  text("MATTHEW BURANDT", width / 2, height / 2);
+  glitch.show();
+}
+function windowResized() {
+  resizeCanvas(windowWidth, 250);
+}
+</script>
+
+<style>
+#p5-holder {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+</style>
