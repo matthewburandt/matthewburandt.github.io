@@ -57,10 +57,70 @@ title: Matthew Burandt
              "cellAlign": "left"
            }'>
         <div class="carousel-cell">
-          <img src="/assets/images/gardenparty_burandt.jpg" alt="Garden Party">
+          <img src="/assets/images/at my limit pink and blue.jpg" alt="At My Limit">
         </div>
         <div class="carousel-cell">
-          <img src="/assets/images/ravenprint_burandt.jpg" alt="Raven">
+          <img src="/assets/images/at my limit pink and red.jpg" alt="At My Limit">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/at my limit rose and blue.jpg" alt="At My Limit">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/at my limit rose and red.jpg" alt="At My Limit">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/blue flower.jpg" alt="Blue Flower">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/cyanotype 1.jpg" alt="Cyanotype 1">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/cyanotype 2.jpg" alt="Cyanotype 2">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/cyanotype 3.jpg" alt="Cyanotype 3">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/dodo red.jpg" alt="Dodo">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/dog black.jpg" alt="Dog">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/dog red and black.jpg" alt="Dog">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/garden party cream orange and red.jpgg" alt="Garder Party">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/garden party cream yellow magenta.jpg" alt="Garden Party">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/garden party green.jpg" alt="Garden Party">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/garden party on blue.jpg" alt="Garden Party">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/raven on kraft.jpg" alt="Raven">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/raven on yellow.jpg" alt="Raven">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/statue black.jpg" alt="Statue">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/statue grey.jpg" alt="Statue">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/stuck black.jpg" alt="Stuck">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/texas green and black.jpg" alt="Texas">
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/images/texas green.jpg" alt="Texas">
         </div>
       </div>
     </section>
@@ -112,10 +172,9 @@ tr_search.fit(X_train_prepared, y_train)</code></pre>
       <p>More coming soon…</p>
     </section>
 
-    <!-- GLITCH TEXT SKETCH -->
     <section class="project-block">
-      <h2>Glitch Experiment</h2>
-      <div id="p5-holder"></div>
+      <h2>Visual Experiment</h2>
+      <div class="glitch" data-text="GLITCHING TEXT">GLITCHING TEXT</div>
     </section>
 
   </div>
@@ -173,40 +232,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
-<script>
-let glitch, font;
-function preload() {
-  font = loadFont("https://assets.codepen.io/191583/PPEditorialNew-Regular.otf");
-}
-function setup() {
-  let canvas = createCanvas(windowWidth, 250);
-  canvas.parent("p5-holder");
-  glitch = new Glitch();
-  textFont(font);
-  textSize(64);
-  textAlign(CENTER, CENTER);
-  fill("#fff");
-  noStroke();
-}
-function draw() {
-  background("#0c0c0c");
-  glitch.loadImage(canvas);
-  text("MATTHEW BURANDT", width / 2, height / 2);
-  glitch.show();
-}
-function windowResized() {
-  resizeCanvas(windowWidth, 250);
-}
-</script>
-
-<style>
-#p5-holder {
-  margin-top: 80px;
-  margin-bottom: 100px;
-}
-canvas {
-  display: block;
-  margin: 0 auto;
-}
-</style>
