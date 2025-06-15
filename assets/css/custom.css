@@ -175,104 +175,55 @@
 ──────────────────────────────────────────────*/
 .typed-cursor { display: none; }   /* hide Typed.js default caret */
 
-.glitch {
-  font-size: 3rem;
-  font-weight: bold;
-  position: relative;
-  color: white;
-  text-transform: uppercase;
-  animation: glitch-skew 1s infinite linear alternate-reverse;
-}
-
 /*──────────────────────────────────────────────
   Glitch
 ──────────────────────────────────────────────*/
+.glitch {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
-  overflow: hidden;
-  color: white;
-  background: transparent;
-  clip: rect(0, 900px, 0, 0);
+  height: 100%;
 }
 
 .glitch::before {
-  animation: glitch-top 1s infinite linear alternate-reverse;
-  color: #ff00c1;
+  color: #f0f; /* Magenta shadow */
+  animation: glitch-top 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
 .glitch::after {
-  animation: glitch-bottom 1s infinite linear alternate-reverse;
-  color: #00fff9;
+  color: #0ff; /* Cyan shadow */
+  animation: glitch-bottom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
 @keyframes glitch-top {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(0.5px, -0.5px);
-  }
-  20% {
-    clip: rect(0, 9999px, 5px, 0);
-    transform: translate(-1px, -1px);
-  }
-  40% {
-    clip: rect(0, 9999px, 10px, 0);
-    transform: translate(-2px, 0);
-  }
-  60% {
-    clip: rect(0, 9999px, 15px, 0);
-    transform: translate(2px, 1px);
-  }
-  80% {
-    clip: rect(0, 9999px, 20px, 0);
-    transform: translate(-0.5px, 1px);
-  }
-  100% {
-    clip: rect(0, 9999px, 25px, 0);
-    transform: translate(1px, -1px);
-  }
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
 }
 
 @keyframes glitch-bottom {
-  0% {
-    clip: rect(25px, 9999px, 30px, 0);
-    transform: translate(-0.5px, 0.5px);
-  }
-  20% {
-    clip: rect(20px, 9999px, 30px, 0);
-    transform: translate(1px, 1px);
-  }
-  40% {
-    clip: rect(15px, 9999px, 25px, 0);
-    transform: translate(2px, 0);
-  }
-  60% {
-    clip: rect(10px, 9999px, 20px, 0);
-    transform: translate(-2px, -1px);
-  }
-  80% {
-    clip: rect(5px, 9999px, 15px, 0);
-    transform: translate(1px, -1px);
-  }
-  100% {
-    clip: rect(0px, 9999px, 10px, 0);
-    transform: translate(-1px, 1px);
-  }
-}
-
-@keyframes glitch-skew {
-  0% {
-    transform: skew(0deg);
-  }
-  50% {
-    transform: skew(1deg);
-  }
-  100% {
-    transform: skew(-1deg);
-  }
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(2px, 0); }
+  40% { transform: translate(-2px, 0); }
+  60% { transform: translate(2px, 0); }
+  80% { transform: translate(-2px, 0); }
+  100% { transform: translate(0, 0); }
 }
 
