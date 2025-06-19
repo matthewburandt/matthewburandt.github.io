@@ -229,15 +229,15 @@ document.addEventListener("DOMContentLoaded", function () {
     typed = new Typed("#typed-title", {
       strings: [text],
       typeSpeed: speed,
-      backSpeed: 20,
-      backDelay: 1000,
-      showCursor: false,
+      backSpeed: 50,
+      backDelay: 500,
+      showCursor: true,
       onComplete() {
         setTimeout(() => {
           typed.destroy();
           index = (index + 1) % strings.length;
           startTyped();
-        }, 800);
+        }, 400);
       }
     });
   }
