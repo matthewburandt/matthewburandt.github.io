@@ -189,9 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { text: "And Prints", speed: 30 }, { text: "And Art", speed: 20 },
     { text: "And Technology", speed: 5 }, { text: "And Science", speed: 5 },
     { text: "And Python", speed: 4 }, { text: "And Data", speed: 4 },
-    { text: "And Algorithms", speed: 2 }, { text: "And AI", speed: 2 },
-    { text: "And Models", speed: 1 }, { text: "And Machines", speed: 1 },
-    { text: "And Code", speed: 1 }, { text: "And Creativity", speed: 2 },
+    { text: "And Algorithms", speed: 3 }, { text: "And AI", speed: 3 },
+    { text: "And Models", speed: 2 }, { text: "And Machines", speed: 2 },
+    { text: "And Code", speed: 2 }, { text: "And Creativity", speed: 2 },
     { text: "And Innovation", speed: 1 }, { text: "And Exploration", speed: 1 },
     { text: "And Discovery", speed: 1 }, { text: "And Inspiration", speed: 1 },
     { text: "And Passion", speed: 1 }, { text: "And Curiosity", speed: 1 },
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { text: "And Perspective", speed: 1 }, { text: "And Clarity", speed: 1 },
     { text: "And Focus", speed: 1 }, { text: "And Balance", speed: 1 },
     { text: "And Harmony", speed: 1 }, { text: "And Peace", speed: 1 },
-    { text: "And Logic", speed: 1 }, { text: "And Fun", speed: 3 },
+    { text: "And Logic", speed: 1 }, { text: "And Fun", speed: 1 },
     { text: "And Love", speed: 1 }, { text: "And Joy", speed: 1 },
     { text: "And Happiness", speed: 1 },
     { text: "And Laughter", speed: 1 }, { text: "And Play", speed: 1 },
@@ -229,15 +229,15 @@ document.addEventListener("DOMContentLoaded", function () {
     typed = new Typed("#typed-title", {
       strings: [text],
       typeSpeed: speed,
-      backSpeed: 50,
-      backDelay: 500,
+      backSpeed: 100,
+      backDelay: 700,
       showCursor: true,
       onComplete() {
         setTimeout(() => {
           typed.destroy();
           index = (index + 1) % strings.length;
           startTyped();
-        }, 400);
+        }, 1000);
       }
     });
   }
