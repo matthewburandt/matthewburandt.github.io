@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { text: "And Adventure", speed: 1 }, { text: "And Exploration", speed: 1 },
     { text: "And Artistry", speed: 1 }, { text: "And Culture", speed: 1 },
     { text: "And Tradition", speed: 1 }, { text: "And Community", speed: 1 },
-    { text: "And Community", speed: 1 }, { text: "And Friendship", speed: 1 },
+    { text: "And Friendship", speed: 1 },
     { text: "And Sound", speed: 1 }, { text: "And Light", speed: 1 },
     { text: "And Signal", speed: 1 }, { text: "And Movement", speed: 1 },
     { text: "And Silence", speed: 1 }, 
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     typed = new Typed("#typed-title", {
       strings: [text],
       typeSpeed: speed,
-      backSpeed: 100,
+      backSpeed: 1500,
       backDelay: 700,
       showCursor: true,
       onComplete() {
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
           typed.destroy();
           index = (index + 1) % strings.length;
           startTyped();
-        }, 1000);
+        }, 20);
       }
     });
   }
