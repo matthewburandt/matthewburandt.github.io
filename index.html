@@ -45,85 +45,35 @@ title: Matthew Burandt
   <div class="page-padding">
 
     <!-- PRINTS -->
-    <section class="project-block">
-      <h2><a href="/gallery.html">Prints</a></h2>
+<section class="project-block">
+  <h2><a href="/gallery.html">Prints</a></h2>
 
-      <div class="print-carousel js-flickity"
-           data-flickity='{
-             "wrapAround": true,
-             "autoPlay": false,
-             "imagesLoaded": true,
-             "pageDots": false,
-             "cellAlign": "left"
-           }'>
-        <div class="carousel-cell">
-          <img src="/assets/images/at my limit pink and blue.jpg" alt="At My Limit">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/at my limit pink and red.jpg" alt="At My Limit">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/at my limit rose and blue-med.jpg" alt="At My Limit">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/at my limit rose and red-med.jpg" alt="At My Limit">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/blue flower-med.jpg" alt="Blue Flower">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/cyanotype 1-med.jpg" alt="Cyanotype 1">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/cyanotype 2-med.jpg" alt="Cyanotype 2">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/cyanotype 3-med.jpg" alt="Cyanotype 3">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/dodo red-med.jpg" alt="Dodo">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/dog black-med.jpg" alt="Dog">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/dog red and black-med.jpg" alt="Dog">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/garden party cream orange and red-med.jpg" alt="Garder Party">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/garden party cream yellow magenta-med.jpg" alt="Garden Party">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/garden party green-med.jpg" alt="Garden Party">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/garden party on blue-med.jpg" alt="Garden Party">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/raven on kraft-med.jpg" alt="Raven">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/raven on yellow-med.jpg" alt="Raven">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/statue black-med.jpg" alt="Statue">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/statue grey-med.jpg" alt="Statue">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/stuck black-med.jpg" alt="Stuck">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/texas green and black-med.jpg" alt="Texas">
-        </div>
-        <div class="carousel-cell">
-          <img src="/assets/images/texas green-med.jpg" alt="Texas">
-        </div>
-      </div>
-    </section>
+  <!-- NEW responsive grid -->
+  <div class="print-grid">
+    <img src="/assets/images/at my limit pink and blue.jpg" alt="At My Limit">
+    <img src="/assets/images/at my limit pink and red.jpg" alt="At My Limit">
+    <img src="/assets/images/at my limit rose and blue-med.jpg" alt="At My Limit">
+    <img src="/assets/images/at my limit rose and red-med.jpg" alt="At My Limit">
+    <img src="/assets/images/blue flower-med.jpg" alt="Blue Flower">
+    <img src="/assets/images/cyanotype 1-med.jpg" alt="Cyanotype 1">
+    <img src="/assets/images/cyanotype 2-med.jpg" alt="Cyanotype 2">
+    <img src="/assets/images/cyanotype 3-med.jpg" alt="Cyanotype 3">
+    <img src="/assets/images/dodo red-med.jpg" alt="Dodo">
+    <img src="/assets/images/dog black-med.jpg" alt="Dog">
+    <img src="/assets/images/dog red and black-med.jpg" alt="Dog">
+    <img src="/assets/images/garden party cream orange and red-med.jpg" alt="Garden Party">
+    <img src="/assets/images/garden party cream yellow magenta-med.jpg" alt="Garden Party">
+    <img src="/assets/images/garden party green-med.jpg" alt="Garden Party">
+    <img src="/assets/images/garden party on blue-med.jpg" alt="Garden Party">
+    <img src="/assets/images/raven on kraft-med.jpg" alt="Raven">
+    <img src="/assets/images/raven on yellow-med.jpg" alt="Raven">
+    <img src="/assets/images/statue black-med.jpg" alt="Statue">
+    <img src="/assets/images/statue grey-med.jpg" alt="Statue">
+    <img src="/assets/images/stuck black-med.jpg" alt="Stuck">
+    <img src="/assets/images/texas green and black-med.jpg" alt="Texas">
+    <img src="/assets/images/texas green-med.jpg" alt="Texas">
+  </div>
+</section>
 
     <!-- PROJECTS -->
     <section class="project-block">
@@ -181,6 +131,7 @@ tr_search.fit(X_train_prepared, y_train)</code></pre>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/ffd8/p5.glitch/lib/p5.glitch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -247,6 +198,12 @@ document.addEventListener("DOMContentLoaded", function () {
     { text: "And Signal", speed: 1, speed2: 50 },
     { text: "And Movement", speed: 1, speed2: 50 },
     { text: "And Silence", speed: 1, speed2: 50 },
+    { text: "And Stillness", speed: 1, speed2: 50 },
+    { text: "And Space", speed: 1, speed2: 50 },
+    { text: "And Time", speed: 1, speed2: 50 },
+    { text: "And Memory", speed: 1, speed2: 50 },
+    { text: "And Dreams", speed: 1, speed2: 50 },
+    { text: "And Reality", speed: 1, speed2: 50 },
     { text: "And Things", speed: 1, speed2: 50 },
     { text: "And Stuff", speed: 1, speed2: 50 },
     { text: "Et cetera.", speed: 25, speed2: 2000 }
@@ -283,4 +240,16 @@ document.addEventListener("DOMContentLoaded", function () {
     pageDots: false
   });
 });
+</script>
+
+<script>
+  /* initialise after DOM ready */
+  document.addEventListener("DOMContentLoaded", () => {
+    VanillaTilt.init(document.querySelectorAll(".print-grid img"), {
+      max: 8,          // degrees of rotation
+      speed: 400,      // animation speed
+      glare: false,    // set true for light glare
+      "max-glare": 0.2 // glare intensity
+    });
+  });
 </script>
