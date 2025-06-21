@@ -27,6 +27,9 @@
 .site-header {
   padding-block: 3rem 2rem;         /* space above + below */
   text-align: left;
+  position: sticky;
+  top: 0;
+  border-bottom: #000 solid 2px; /* thin black line */
 }
 
 #typed-title {
@@ -44,10 +47,6 @@
   align-items: center;             /* vertically centre text vs. image */
   margin-block: 0;
   
-  /* Add border */
-  border: 1px solid #000;      /* Thin black line */
-  padding: 2rem;               /* Optional: to give some spacing inside */
-  box-sizing: border-box;/* dividers handle vertical rhythm */
 }
 
 .intro-text {
@@ -55,7 +54,9 @@
   text-align: right;               /* ► 1. right‑align subtitle text  */
   font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   line-height: 1.45;
-  font-weight: 500;
+  font-weight: 700;
+  padding: 2.5rem;
+  border-left: 2px solid #000;          /* space above + below text */
 }
 
 .intro-image {
