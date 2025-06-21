@@ -246,9 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
   /* initialise after DOM ready */
   document.addEventListener("DOMContentLoaded", () => {
     VanillaTilt.init(document.querySelectorAll(".print-grid img"), {
-      max: 8,          // degrees of rotation
+      max: 25,          // degrees of rotation
       speed: 400,      // animation speed
-      glare: false,    // set true for light glare
+      glare: true,    // set true for light glare
       "max-glare": 0.2 // glare intensity
     });
   });
