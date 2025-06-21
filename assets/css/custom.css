@@ -183,18 +183,32 @@
   gap: var(--gap);
 }
 
-.print-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0;          /* no rounded edges */
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
-  transition: transform 0.15s ease;  /* smooth reset */
-  transform-style: preserve-3d;      /* enables 3-D tilt */
-  will-change: transform;
+.print-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1; /* Ensures the circle remains square */
 }
 
-/* optional subtle lift on hover (works with tilt) */
-.print-grid img:hover {
-  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+.print-item::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border: 2px solid #000;  /* Thin black outline */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.print-item img {
+  position: relative;
+  width: 90%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform 0.15s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 1; /* Keeps image above the circle */
 }
