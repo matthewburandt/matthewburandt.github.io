@@ -42,7 +42,12 @@
   flex-wrap: wrap;                 /* stacks on small screens */
   gap: 2rem;
   align-items: center;             /* vertically centre text vs. image */
-  margin-block: 0;                 /* dividers handle vertical rhythm */
+  margin-block: 0;
+  
+  /* Add border */
+  border: 1px solid #000;      /* Thin black line */
+  padding: 2rem;               /* Optional: to give some spacing inside */
+  box-sizing: border-box;/* dividers handle vertical rhythm */
 }
 
 .intro-text {
