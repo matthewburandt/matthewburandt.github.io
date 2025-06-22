@@ -130,6 +130,7 @@ tr_search.fit(X_train_prepared, y_train)</code></pre>
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/ffd8/p5.glitch/lib/p5.glitch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -250,4 +251,42 @@ document.addEventListener("DOMContentLoaded", function () {
       "max-glare": 0.5 // glare intensity
     });
   });
+</script>
+
+<!-- Text Distortion Sketch -->
+<script>
+  let font;
+  let points = [];
+
+  function preload() {
+    font = loadFont('https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/font/SourceCodePro-Regular.otf');
+  }
+
+  function setup() {
+    createCanvas(windowWidth, 300);
+    textFont(font);
+    textSize(128);
+    fill(0);
+    noStroke();
+
+    // Get the points for the text
+    points = font.textToPoints('Hello World, this is a test', 50, 200, 128, {
+      sampleFactor: 0.2
+    });
+  }
+
+  function draw() {
+    background(255);
+
+    for (let pt of points) {
+      let d = dist(mouseX, mouseY, pt.x, pt.y);
+      let offset = map(d, 0, 200, 15, 0);
+
+      ellipse(pt.x + random(-offset, offset), pt.y + random(-offset, offset), 2);
+    }
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, 300);
+  }
 </script>
