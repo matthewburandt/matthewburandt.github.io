@@ -54,7 +54,7 @@
 .intro-text {
   flex: 1;
   text-align: right;               /* ► 1. right‑align subtitle text  */
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.85rem, 2.4vw, 1.75rem);
   line-height: 1.45;
   font-weight: 500;
   padding: 2.5rem; /* space above + below text */
@@ -67,8 +67,8 @@
 }
 
 .intro-image img {
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   max-height: 80vh;                /* ► 5. big but never causes scroll */
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
@@ -95,7 +95,9 @@
   width: 100%;
   margin-block: 2rem 1.5rem;
   position: sticky;
+  top: 0;
   background-color: #fede00;
+  z-index: 100;
 }
 
 .ticker__move {
