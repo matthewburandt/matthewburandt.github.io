@@ -257,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
   let font;
   let points = [];
+  const BG = '#fede00';      // vibrant yellow
 
   function preload() {
     font = loadFont('https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/font/SourceCodePro-Regular.otf');
@@ -271,18 +272,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the points for the text
     points = font.textToPoints('Hello World, this is a test', 50, 200, 128, {
-      sampleFactor: 0.2
+      sampleFactor: 0.3
     });
   }
 
   function draw() {
-    background(255);
+    background(BG);
 
     for (let pt of points) {
       let d = dist(mouseX, mouseY, pt.x, pt.y);
-      let offset = map(d, 0, 200, 15, 0);
+      let jitter = (frameCount % 60 < 30 ? 1 : -1); // subtle shimmer
 
-      ellipse(pt.x + random(-offset, offset), pt.y + random(-offset, offset), 2);
+    // draw a small rotated square instead of a dot
+      push();
+      translate(pt.x + random(-offset, offset), pt.y + random(-offset, offset));
+      rotate(jitter * 0.05);
+      fill(0);
+      rectMode(CENTER);
+      square(0, 0, 3);   // 3×3 pixels
+      pop();
     }
   }
 
