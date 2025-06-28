@@ -92,6 +92,7 @@
   Ticker
 ──────────────────────────────────────────────*/
 .ticker {
+  padding-block: 3rem 2rem;
   overflow: hidden;
   width: 100%;
   margin-block: 2rem 1.5rem;
@@ -225,4 +226,25 @@
   transform-style: preserve-3d;
   will-change: transform;
   z-index: 1; /* Keeps image above the circle */
+}
+
+.like-button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #222;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.like-button.liked {
+  background: #fede00;
+  color: #000;
+  font-weight: bold;
+}
+
+.like-count {
+  margin-left: 0.3rem;
 }

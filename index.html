@@ -48,28 +48,28 @@ title: Matthew Burandt
 
   <!-- NEW responsive grid -->
   <div class="print-grid">
-    <img src="/assets/images/at my limit pink and blue.jpg" alt="At My Limit">
-    <img src="/assets/images/at my limit pink and red.jpg" alt="At My Limit">
-    <img src="/assets/images/at my limit rose and blue-med.jpg" alt="At My Limit">
-    <img src="/assets/images/at my limit rose and red-med.jpg" alt="At My Limit">
-    <img src="/assets/images/blue flower-med.jpg" alt="Blue Flower">
-    <img src="/assets/images/cyanotype 1-med.jpg" alt="Cyanotype 1">
-    <img src="/assets/images/cyanotype 2-med.jpg" alt="Cyanotype 2">
-    <img src="/assets/images/cyanotype 3-med.jpg" alt="Cyanotype 3">
-    <img src="/assets/images/dodo red-med.jpg" alt="Dodo">
-    <img src="/assets/images/dog black-med.jpg" alt="Dog">
-    <img src="/assets/images/dog red and black-med.jpg" alt="Dog">
-    <img src="/assets/images/garden party cream orange and red-med.jpg" alt="Garden Party">
-    <img src="/assets/images/garden party cream yellow magenta-med.jpg" alt="Garden Party">
-    <img src="/assets/images/garden party green-med.jpg" alt="Garden Party">
-    <img src="/assets/images/garden party on blue-med.jpg" alt="Garden Party">
-    <img src="/assets/images/raven on kraft-med.jpg" alt="Raven">
-    <img src="/assets/images/raven on yellow-med.jpg" alt="Raven">
-    <img src="/assets/images/statue black-med.jpg" alt="Statue">
-    <img src="/assets/images/statue grey-med.jpg" alt="Statue">
-    <img src="/assets/images/stuck black-med.jpg" alt="Stuck">
-    <img src="/assets/images/texas green and black-med.jpg" alt="Texas">
-    <img src="/assets/images/texas green-med.jpg" alt="Texas">
+    <img src="/assets/images/at my limit pink and blue.jpg" alt="At My Limit"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/at my limit pink and red.jpg" alt="At My Limit"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/at my limit rose and blue-med.jpg" alt="At My Limit"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/at my limit rose and red-med.jpg" alt="At My Limit"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/blue flower-med.jpg" alt="Blue Flower"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/cyanotype 1-med.jpg" alt="Cyanotype 1"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/cyanotype 2-med.jpg" alt="Cyanotype 2"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/cyanotype 3-med.jpg" alt="Cyanotype 3"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/dodo red-med.jpg" alt="Dodo"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/dog black-med.jpg" alt="Dog"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/dog red and black-med.jpg" alt="Dog"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/garden party cream orange and red-med.jpg" alt="Garden Party"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/garden party cream yellow magenta-med.jpg" alt="Garden Party"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/garden party green-med.jpg" alt="Garden Party"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/garden party on blue-med.jpg" alt="Garden Party"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/raven on kraft-med.jpg" alt="Raven"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/raven on yellow-med.jpg" alt="Raven"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/statue black-med.jpg" alt="Statue"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/statue grey-med.jpg" alt="Statue"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/stuck black-med.jpg" alt="Stuck"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/texas green and black-med.jpg" alt="Texas"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
+    <img src="/assets/images/texas green-med.jpg" alt="Texas"><button class="like-button" onclick="toggleLike(this)"> ❤️ <span class="like-count">0</span></button>
   </div>
 </section>
 
@@ -297,4 +297,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function windowResized() {
     resizeCanvas(windowWidth, 300);
   }
+</script>
+
+<script>
+function toggleLike(button) {
+  const countSpan = button.querySelector(".like-count");
+  let count = parseInt(countSpan.textContent);
+
+  button.classList.toggle("liked");
+  countSpan.textContent = button.classList.contains("liked") ? count + 1 : count - 1;
+}
 </script>
