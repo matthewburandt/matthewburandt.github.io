@@ -1,11 +1,14 @@
 /*──────────────────────────────────────────────
-  Variables & helpers
+  Variables & Global Helpers
 ──────────────────────────────────────────────*/
 :root {
-  --space: 2rem;             /* master horizontal padding */
+  --space: 2rem;
 }
 
-/* Utility: full‑bleed line that ignores padding */
+.page-padding {
+  padding-inline: var(--space);
+}
+
 .full‑bleed {
   width: calc(100% + (var(--space) * 2));
   margin-inline: calc(-1 * var(--space));
@@ -15,23 +18,16 @@
 }
 
 /*──────────────────────────────────────────────
-  Global page padding
-──────────────────────────────────────────────*/
-.page-padding {
-  padding-inline: var(--space);
-}
-
-/*──────────────────────────────────────────────
-  Hero / typing title
+  Sticky Header (Title)
 ──────────────────────────────────────────────*/
 .site-header {
-  padding-block: 3rem 2rem;         /* space above + below */
+  padding-block: 3rem 2rem;
   text-align: left;
   position: sticky;
-  background-color: #fede00;
   top: 0;
+  background-color: #fede00;
   z-index: 900;
-  border-bottom: #000 solid 2px; /* thin black line */
+  border-bottom: 2px solid #000;
 }
 
 #typed-title {
@@ -41,61 +37,57 @@
 }
 
 /*──────────────────────────────────────────────
-  Intro (subtitle left, image right)
+  Intro Section (Text + Image)
 ──────────────────────────────────────────────*/
 .intro-section {
   display: flex;
-  flex-wrap: wrap;                 /* stacks on small screens */
+  flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;             /* vertically centre text vs. image */
+  align-items: center;
   margin-block: 0;
-  
 }
 
 .intro-text {
   flex: 1;
-  text-align: right;               /* ► 1. right‑align subtitle text  */
+  text-align: right;
   font-size: clamp(2rem, 2.4vw, 1.75rem);
   line-height: 1.45;
   font-weight: 500;
-  padding: 2.5rem; /* space above + below text */
+  padding: 2.5rem;
 }
 
 .intro-image {
   flex: 1;
-  margin-right: calc(-1 * var(--space)); /* pull to right edge */
-  border-right: 2px #000;
+  margin-right: calc(-1 * var(--space));
 }
 
 .intro-image img {
   width: 120%;
   height: 120%;
-  max-height: 80vh;                /* ► 5. big but never causes scroll */
+  max-height: 80vh;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
 /*──────────────────────────────────────────────
-  Divider placement (single, flush with image)
+  Divider Tweaks
 ──────────────────────────────────────────────*/
-/* Top divider sits *below* title, flush with image top */
-.site-header + .full‑bleed {        /* first line after header */
+.site-header + .full‑bleed {
   margin-block-start: 0.5rem;
 }
 
-/* Bottom divider sits *below* intro section, flush with image bottom */
 .intro-section + .full‑bleed {
   margin-block-end: 0.5rem;
 }
 
 /*──────────────────────────────────────────────
-  Ticker
+  Ticker Section
 ──────────────────────────────────────────────*/
 .ticker {
-  padding-block: 3.5rem 3.5rem;
+  padding-block: 3.5rem;
+  margin-block: 2rem 1.5rem;
   overflow: hidden;
   width: 100%;
-  margin-block: 2rem 1.5rem;
   position: sticky;
   top: 0;
   background-color: #fede00;
@@ -123,7 +115,7 @@
 }
 
 /*──────────────────────────────────────────────
-  Gallery grid
+  Responsive Gallery Grid
 ──────────────────────────────────────────────*/
 .gallery {
   display: grid;
@@ -133,21 +125,48 @@
   z-index: 1;
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
 .gallery-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* or center if you want the button centered under the image */
+  align-items: flex-start;
+}
+
+.gallery img,
+.print-item img {
+  width: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease;
 }
 
 /*──────────────────────────────────────────────
-  Flickity carousels
+  Like Button
+──────────────────────────────────────────────*/
+.like-button {
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  background: #fede00;
+  color: #222;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.like-button.liked {
+  color: #000;
+  font-weight: bold;
+}
+
+.like-count {
+  margin-left: 0.2rem;
+  font-size: 0.85rem;
+}
+
+/*──────────────────────────────────────────────
+  Flickity Carousels
 ──────────────────────────────────────────────*/
 .print-carousel {
   margin-block: 1.5rem;
@@ -165,7 +184,6 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* code snippet carousel */
 .code-snippet-carousel .carousel-cell {
   width: 90%;
   max-width: 600px;
@@ -192,58 +210,8 @@
 }
 
 /*──────────────────────────────────────────────
-  Misc small tweaks
+  Misc Tweaks
 ──────────────────────────────────────────────*/
-.typed-cursor { display: none; }   /* hide Typed.js default caret */
-
-/* ───── Responsive gallery grid ───── */
-.print-grid {
-  --gap: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--gap);
-}
-
-.print-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-.print-item img {
-  position: relative;
-  width: 90%;
-  height: auto;
-  border-radius: 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
-  transition: transform 0.15s ease;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.like-button {
-  margin-top: 0.3rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.85rem;
-  background: #fede00;
-  color: #222;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border: none;              /* Remove the border */
-  display: inline-block;       /* Optional: slight rounding */
-}
-
-.like-button.liked {
-  background: #fede00;
-  color: #000;
-  font-weight: bold;
-}
-
-.like-count {
-  margin-left: 0.2rem;
-  font-size: 0.85rem;
+.typed-cursor {
+  display: none;
 }
