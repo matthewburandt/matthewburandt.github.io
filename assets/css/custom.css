@@ -221,3 +221,75 @@
 .typed-cursor {
   display: none;
 }
+
+/*──────────────────────────────────────────────
+  Mobile Responsiveness
+──────────────────────────────────────────────*/
+@media (max-width: 900px) {
+  .intro-section {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+  }
+  .intro-text {
+    text-align: center;
+    padding: 1.2rem 0.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+  .intro-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .gallery {
+    max-width: 98vw;
+    gap: 0.5rem;
+  }
+  .gallery img,
+  .print-item img {
+    max-width: 95vw;
+  }
+  .site-header {
+    font-size: 1.2rem;
+    padding-block: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --space: 0.7rem;
+  }
+  .intro-section {
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  .intro-text {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .gallery img,
+  .print-item img {
+    max-width: 98vw;
+    border-radius: 4px;
+  }
+  .site-header {
+    font-size: 1rem;
+    padding-block: 0.3rem 0.3rem;
+  }
+  .ticker {
+    font-size: 1rem;
+    padding-block: 1rem;
+  }
+  .like-button {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
