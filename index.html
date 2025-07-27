@@ -215,41 +215,24 @@ title: Matthew Burandt
     <!-- PROJECTS -->
     <section class="project-block">
       <h2>Projects</h2>
-
-      <div class="code-snippet-carousel carousel">
+      <div class="code-snippet-carousel">
+        <!-- Carousel cell: Project image + overlay -->
         <div class="carousel-cell">
-          <img src="assets\images\Digit Recognizer Project Sheet.jpg" alt="Digit Recognizer" loading="lazy" width="400" height="400">
-        <div class="print-overlay">MNIST Digit Classifier</div>
-<pre><code class="language-python"># Decision Tree Regressor
-param_dist = {
-    'max_depth': randint(1, 20),
-    'max_features': randint(1, 10),
-    'min_samples_leaf': randint(1, 15)
-}
-
-tr2 = DecisionTreeRegressor(random_state=42)
-tr_search = RandomizedSearchCV(
-    tr2,
-    param_distributions=param_dist,
-    n_iter=100,
-    cv=10,
-    scoring='neg_mean_squared_error',
-    random_state=42
-)
-tr_search.fit(X_train_prepared, y_train)</code></pre>
-          <p class="carousel-caption">MPLS Traffic Prediction (Python)</p>
+          <div class="project-image-wrapper">
+            <img src="/assets/images/Digit Recognizer Project Sheet.jpg" alt="Digit Recognizer" loading="lazy" width="400" height="400">
+            <div class="print-overlay">MNIST Digit Classifier</div>
+          </div>
+          <p class="carousel-caption">A neural network for handwritten digit recognition using Keras and CNNs.</p>
         </div>
-
+        <!-- Carousel cell: Code snippet -->
         <div class="carousel-cell">
-<pre><code class="language-python">model2 = Sequential([
-    keras.layers.Conv2D(32,(3,3),activation='relu',input_shape=(28,28,1)),
-    keras.layers.MaxPooling2D((2,2)),
-    keras.layers.Conv2D(64,(3,3),activation='relu'),
-    keras.layers.Flatten(),
-    keras.layers.Dense(256, activation='relu'),
-    keras.layers.Dense(128, activation='relu'),
-    keras.layers.Dense(num_labels, activation='softmax')
-])</code></pre>
+          <pre><code class="language-python">model2 = Sequential([
+        keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+        keras.layers.Flatten(),
+        keras.layers.Dense(256, activation='relu'),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(num_labels, activation='softmax')
+    ])</code></pre>
           <p class="carousel-caption">Digit Classifier (Keras)</p>
         </div>
       </div>
