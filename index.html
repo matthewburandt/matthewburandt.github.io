@@ -6,12 +6,17 @@ title: Matthew Burandt
 <link rel="stylesheet" href="/assets/css/custom.css">
 
 <!-- External CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css">
 
 <!-- Page hero -->
 <section class="site-header">
   <h1><span id="typed-title"></span></h1>
+  <nav class="header-nav">
+    <a href="#prints" class="nav-button">Prints</a>
+    <a href="#projects" class="nav-button">Projects</a>
+    <a href="#mailing-list" class="nav-button">Mailing List</a>
+    <a href="#other" class="nav-button">Other</a>
+  </nav>
 </section>
 
 
@@ -50,7 +55,7 @@ title: Matthew Burandt
   <div class="page-padding">
 
     <!-- PRINTS -->
-<section class="project-block">
+<section id="prints" class="project-block">
   <h2><a href="/gallery.html">Prints</a></h2>
 
   <!-- NEW responsive grid -->
@@ -213,17 +218,16 @@ title: Matthew Burandt
 </section>
 
     <!-- PROJECTS -->
-    <section class="project-block">
+    <section id="projects" class="project-block">
       <h2>Projects</h2>
-      <div class="code-snippet-carousel">
-        <!-- Carousel cell: Project image + overlay -->
-        <div class="carousel-cell">
+      <div class="project-content">
+        <div class="project-image-section">
           <div class="project-image-wrapper">
             <img src="/assets/images/Digit Recognizer Project Sheet.jpg" alt="Digit Recognizer" loading="lazy" width="1250" height="1250">
-            <div class="print-overlay">MNIST Digit Classifier: Using Keras and CNNs</div>
+            <div class="project-image-overlay">MNIST Digit Classifier: Using Keras and CNNs</div>
           </div>
-        <!-- Carousel cell: Code snippet -->
-
+        </div>
+        <div class="project-code-section">
           <pre><code class="language-python">model2 = Sequential([
         keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
         keras.layers.Flatten(),
@@ -231,13 +235,12 @@ title: Matthew Burandt
         keras.layers.Dense(128, activation='relu'),
         keras.layers.Dense(num_labels, activation='softmax')
     ])</code></pre>
-          <p class="carousel-caption">Digit Classifier (Keras)</p>
         </div>
       </div>
     </section>
 
     <!-- OTHER -->
-    <section class="project-block">
+    <section id="other" class="project-block">
       <h2>Other</h2>
       <p>More coming soon…</p>
     </section>
@@ -246,7 +249,7 @@ title: Matthew Burandt
 </main>
 
 <!-- Mailing List Signup Box -->
-<section class="mailing-list-section page-padding">
+<section id="mailing-list" class="mailing-list-section page-padding">
   <h2 class="mailing-list-title">JOIN MY MAILING LIST</h2>
   <form id="mailing-list-form" class="mailing-list-form" autocomplete="off">
     <div class="mailing-list-fields">
@@ -260,7 +263,6 @@ title: Matthew Burandt
 
 <!-- External JS -->
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/ffd8/p5.glitch/lib/p5.glitch.min.js" defer></script>
@@ -366,13 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   hljs.highlightAll();
 
-  new Flickity(".code-snippet-carousel", {
-    cellAlign: "left",
-    contain: true,
-    wrapAround: true,
-    autoPlay: false,
-    pageDots: false
-  });
+  // Flickity carousel removed - Projects section now uses grid layout
 });
 </script>
 
