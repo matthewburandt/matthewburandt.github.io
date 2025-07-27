@@ -43,8 +43,6 @@ html {
   padding-left: var(--space);
   text-align: left;
   margin: 0;
-  display: block;
-  width: 100%;
 }
 
 .header-nav {
