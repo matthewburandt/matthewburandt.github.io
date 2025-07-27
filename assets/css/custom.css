@@ -42,12 +42,17 @@ html {
   font-weight: 500;
   text-align: left;
   margin: 0;
+  min-width: 60%;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .header-nav {
   display: flex;
   gap: 1rem;
   padding-right: var(--space);
+  flex-shrink: 0;
 }
 
 .nav-button {
@@ -75,6 +80,12 @@ html {
     flex-direction: column;
     gap: 0.5rem;
     padding-block: 0.5rem;
+  }
+  
+  #typed-title {
+    min-width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
   
   .header-nav {
