@@ -35,19 +35,24 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  min-height: 4rem;
+  height: auto;
 }
 
 #typed-title {
   font-size: clamp(2.8rem, 4vw, 4rem);
   font-weight: 500;
-  text-align: left;
+  text-align: left !important;
   margin: 0;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  min-height: 1.2em;
+  height: 1.2em;
   display: flex;
   align-items: center;
+  line-height: 1.2;
+  min-height: 1.2em;
+  max-height: 1.2em;
 }
 
 .header-nav {
@@ -86,7 +91,7 @@ html {
   }
   
   #typed-title {
-    text-align: center;
+    text-align: left;
   }
   
   .header-nav {
