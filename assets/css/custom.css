@@ -50,6 +50,7 @@ html {
   height: 1.2em;
   display: flex;
   align-items: center;
+  justify-content: flex-start !important;
   line-height: 1.2;
   min-height: 1.2em;
   max-height: 1.2em;
@@ -91,7 +92,8 @@ html {
   }
   
   #typed-title {
-    text-align: left;
+    text-align: left !important;
+    justify-content: flex-start !important;
   }
   
   .header-nav {
@@ -106,6 +108,11 @@ html {
 }
 
 @media (max-width: 600px) {
+  #typed-title {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
   .header-nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -572,6 +579,11 @@ html {
   .site-header {
     font-size: 1.2rem;
     padding-block: 0.5rem 0.5rem;
+  }
+  
+  #typed-title {
+    text-align: left !important;
+    justify-content: flex-start !important;
   }
 }
 
