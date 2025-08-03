@@ -23,9 +23,10 @@ class MailboxHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         """Handle POST requests for mailing list signups"""
         if self.path == '/api/subscribe':
-            # Set CORS headers
+            # Set CORS headers first
             self.send_header('Access-Control-Allow-Origin', '*')
-            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+            self.send_header('Access-Control-Allow-Headers', 'Content-Type')
             
             try:
                 # Get content length
@@ -40,6 +41,7 @@ class MailboxHandler(BaseHTTPRequestHandler):
                 # Validate inputs
                 if not name or not email:
                     self.send_response(400)
+                    self.send_header('Content-Type', 'application/json')
                     self.end_headers()
                     response = {
                         'success': False,
@@ -51,6 +53,7 @@ class MailboxHandler(BaseHTTPRequestHandler):
                 # Basic email validation
                 if '@' not in email or '.' not in email:
                     self.send_response(400)
+                    self.send_header('Content-Type', 'application/json')
                     self.end_headers()
                     response = {
                         'success': False,
@@ -71,6 +74,7 @@ class MailboxHandler(BaseHTTPRequestHandler):
                 
                 # Send success response
                 self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 response = {
                     'success': True,
@@ -81,6 +85,7 @@ class MailboxHandler(BaseHTTPRequestHandler):
             except Exception as e:
                 print(f"Error processing request: {e}")
                 self.send_response(500)
+                self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 response = {
                     'success': False,

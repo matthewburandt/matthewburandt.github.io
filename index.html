@@ -457,12 +457,15 @@ if (mailingListForm) {
       return;
     }
     try {
+      console.log('Sending request to server...');
       const res = await fetch('http://localhost:3001/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email })
       });
+      console.log('Response status:', res.status);
       const data = await res.json();
+      console.log('Response data:', data);
       if (data.success) {
         mailingListMessage.textContent = data.message || 'Thank you for subscribing!';
         mailingListMessage.style.color = '#008000';
@@ -472,7 +475,12 @@ if (mailingListForm) {
         mailingListMessage.style.color = '#c00';
       }
     } catch (err) {
-      mailingListMessage.textContent = 'Could not connect to server.';
+      console.error('Form submission error:', err);
+      if (err.name === 'TypeError' && err.message.includes('fetch')) {
+        mailingListMessage.textContent = 'Could not connect to server. Please make sure the server is running.';
+      } else {
+        mailingListMessage.textContent = 'Submission error. Please try again.';
+      }
       mailingListMessage.style.color = '#c00';
     }
   });
