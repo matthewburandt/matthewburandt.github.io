@@ -43,18 +43,8 @@ html {
 #typed-title {
   font-size: clamp(2.8rem, 4vw, 4rem);
   font-weight: 500;
-  text-align: left !important;
+  text-align: left;
   margin: 0;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  height: 1.2em;
-  display: block;
-  line-height: 1.2;
-  min-height: 1.2em;
-  max-height: 1.2em;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .header-nav {
@@ -93,9 +83,6 @@ html {
   }
   
   #typed-title {
-    text-align: left !important;
-    padding-left: 0;
-    padding-right: 0;
     font-size: clamp(2rem, 3.5vw, 3rem);
   }
   
@@ -112,9 +99,6 @@ html {
 
 @media (max-width: 600px) {
   #typed-title {
-    text-align: left !important;
-    padding-left: 0;
-    padding-right: 0;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
   
@@ -586,11 +570,7 @@ html {
     padding-block: 0.5rem 0.5rem;
   }
   
-  #typed-title {
-    text-align: left !important;
-    padding-left: 0;
-    padding-right: 0;
-  }
+
 }
 
 @media (max-width: 600px) {
