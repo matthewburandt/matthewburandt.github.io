@@ -26,6 +26,7 @@ html {
 ──────────────────────────────────────────────*/
 .site-header {
   padding-block: 0.8rem 0.8rem;
+  padding-inline: var(--space);
   text-align: left;
   position: sticky;
   top: 0;
@@ -52,7 +53,8 @@ html {
   line-height: 1.2;
   min-height: 1.2em;
   max-height: 1.2em;
-  padding-left: var(--space);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .header-nav {
@@ -92,7 +94,9 @@ html {
   
   #typed-title {
     text-align: left !important;
-    padding-left: var(--space);
+    padding-left: 0;
+    padding-right: 0;
+    font-size: clamp(2rem, 3.5vw, 3rem);
   }
   
   .header-nav {
@@ -109,7 +113,9 @@ html {
 @media (max-width: 600px) {
   #typed-title {
     text-align: left !important;
-    padding-left: var(--space);
+    padding-left: 0;
+    padding-right: 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
   
   .header-nav {
@@ -582,7 +588,8 @@ html {
   
   #typed-title {
     text-align: left !important;
-    padding-left: var(--space);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
